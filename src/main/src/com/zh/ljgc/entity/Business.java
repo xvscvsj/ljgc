@@ -7,13 +7,21 @@ import javax.persistence.Entity;
  */
 @Entity
 public class Business {
+    //商品号
     private Integer gid;
+    //区域
     private String garea;
+    //价格
     private String gprice;
+    //设施
     private String gfacilities;
+    //商品名
     private String gname;
+    //内容
     private String gmain;
+    //地址
     private String gaddress;
+    //电话
     private String gphone;
 
     public Business() {

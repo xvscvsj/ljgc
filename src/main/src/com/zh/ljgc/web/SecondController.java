@@ -4,10 +4,12 @@ package com.zh.ljgc.web;
 import com.zh.ljgc.entity.*;
 import com.zh.ljgc.service.LjgcService;
 import com.zh.ljgc.service.SecondService;
+import com.zh.ljgc.utils.page.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -18,27 +20,52 @@ import java.util.List;
  */
 @Controller
 public class SecondController {
+
   @Autowired
   private SecondService secondService;
+
     @Autowired
     private LjgcService ljgcService;
 
+//    @RequestMapping("/food")
+//    public String queryfood(Model model,Integer pageNo,Integer pageSize){
+//         //取到dao中的美食数据
+//        List<ShopFoodEntity> foodEntityList =secondService.queryfood();
+//        List<Content> contentList=ljgcService.findAll();
+//       if(pageNo==null)
+//       {
+//           pageNo=1;
+//       }
+//        if (pageSize==null){
+//            pageSize=2;
+//        }
+//        Pagination pagination=secondService.foodlist(pageNo,pageSize);
+//
+//        model.addAttribute("contentList",contentList);
+//        model.addAttribute("pagination",pagination);
+//
+//        //将数据放到model中
+//        model.addAttribute("FoodData",foodEntityList);
+//        for (ShopFoodEntity each:foodEntityList) {
+//            System.out.println("名字："+each.getFoodname());
+//        }
+//     return "Lj-Bar";
+//    }
+
+
     @RequestMapping("/food")
-    public String queryfood(Model model){
-         //取到dao中的美食数据
-        List<ShopFoodEntity> foodEntityList =secondService.queryfood();
-        List<Content> contentList=ljgcService.findAll();
-
-        model.addAttribute("contentList",contentList);
-
-        //将数据放到model中
-        model.addAttribute("FoodData",foodEntityList);
-        for (ShopFoodEntity each:foodEntityList) {
-            System.out.println("名字："+each.getFoodname());
+    public String test(Integer pageNo, Integer pageSize, Model model){
+        if (pageNo==null){
+            pageNo=1;
         }
-     return "Lj-Bar";
-//        return "cs";
+        if (pageSize==null){
+            pageSize=1;
+        }
+        Pagination pagination=secondService.foodlist(pageNo,pageSize);
+       model.addAttribute("pagination",pagination);
+        return "Lj-Bar";
     }
+
 //    @RequestMapping("/periodical")
 //    public String find(Model model){
 //        //取到dao中的期刊数据
@@ -82,5 +109,17 @@ public class SecondController {
         model.addAttribute("Hotel",hotelList);
         model.addAttribute("Business",busList);
         return "Lj-stay";
+    }
+
+    @RequestMapping("/back_business")
+    public String findbackshop(Model model){
+        List<Hotel> hotelList =secondService.findhotel();
+        List<Business> busList =secondService.findbus();
+        List<Content> contentList=ljgcService.findAll();
+
+        model.addAttribute("contentList",contentList);
+        model.addAttribute("Hotel",hotelList);
+        model.addAttribute("Business",busList);
+        return "back_business";
     }
 }

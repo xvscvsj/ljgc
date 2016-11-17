@@ -46,134 +46,19 @@
              
              <!--text begin-->
 
-             <div class="Lj-news-text"><div>
+             <div class="Lj-news-text">
                  <c:forEach var="newlist" items="${Newlist}">
-                <%--<ul>--%>
-                  <%--<li>--%>
-                      <dl>
-                          <c:if test="${newlist.id==97}">
-                         <dt><a href="javascript:">${newlist.title}</a></dt>
-                         <dd>${newlist.details}</dd>
-                          </c:if>
-                      </dl>
-                  <%--</li>--%>
-                  <%--<li>--%>
-                      <c:if test="${newlist.id==98}">
+                 <div>
+                      <c:if test="${newlist.id>=97&&newlist.id<=98}">
                       <span><a href="javascript:"><img src="${newlist.titleImg}"/></a></span>
-                      </c:if>
                       <dl>
-                          <c:if test="${newlist.id==98}">
                          <dt><a href="javascript:">${newlist.title}</a></dt>
                          <dd>${newlist.details}</dd>
-                          </c:if>
                       </dl>
-                  <%--</li>--%>
-                    <%--<li>--%>
-                        <dl>
-                            <c:if test="${newlist.id==97}">
-                                <dt><a href="javascript:">${newlist.title}</a></dt>
-                                <dd>${newlist.details}</dd>
-                            </c:if>
-                        </dl>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                        <dl>
-                            <c:if test="${newlist.id==97}">
-                                <dt><a href="javascript:">${newlist.title}</a></dt>
-                                <dd>${newlist.details}</dd>
-                            </c:if>
-                        </dl>
-                    <%--</li>--%>
-
-                    <%--<li>--%>
-                        <c:if test="${newlist.id==98}">
-                            <span><a href="javascript:"><img src="${newlist.titleImg}"/></a></span>
-                        </c:if>
-                     <dl>
-                         <c:if test="${newlist.id==97}">
-                             <dt><a href="javascript:">${newlist.title}</a></dt>
-                             <dd>${newlist.details}</dd>
-                         </c:if>
-                     </dl>
-                            <dl>
-                                <c:if test="${newlist.id==98}">
-                                <dt><a href="javascript:">${newlist.title}</a></dt>
-                                <dd>${newlist.details}</dd>
-                                </c:if>
-                            </dl>
-                     <dl>
-                         <c:if test="${newlist.id==97}">
-                             <dt><a href="javascript:">${newlist.title}</a></dt>
-                             <dd>${newlist.details}</dd>
-                         </c:if>
-                     </dl>
-                    <%--</li>--%>
-
-
-                    <%--<li>--%>
-                        <dl>
-                            <c:if test="${newlist.id==97}">
-                                <dt><a href="javascript:">${newlist.title}</a></dt>
-                                <dd>${newlist.details}</dd>
-                            </c:if>
-                        </dl>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                        <c:if test="${newlist.id==98}">
-                            <span><a href="javascript:"><img src="${newlist.titleImg}"/></a></span>
-                            <dl>
-                                <dt><a href="javascript:">${newlist.title}</a></dt>
-                                <dd>${newlist.details}</dd>
-                            </dl>
-                        </c:if>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                        <dl>
-                            <c:if test="${newlist.id==97}">
-                                <dt><a href="javascript:">${newlist.titleImg}</a></dt>
-                                <dd>${newlist.details}</dd>
-                            </c:if>
-                        </dl>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                        <c:if test="${newlist.id==98}">
-                            <span><a href="javascript:"><img src="${newlist.titleImg}"/></a></span>
-                            <dl>
-                                <dt><a href="javascript:">${newlist.title}</a></dt>
-                                <dd>${newlist.details}</dd>
-                            </dl>
-                        </c:if>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                        <dl>
-                            <c:if test="${newlist.id==97}">
-                                <dt><a href="javascript:">${newlist.title}</a></dt>
-                                <dd>${newlist.details}</dd>
-                            </c:if>
-                        </dl>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                        <c:if test="${newlist.id==98}">
-                            <span><a href="javascript:"><img src="${newlist.titleImg}"/></a></span>
-                            <dl>
-                                <dt><a href="javascript:">${newlist.title}</a></dt>
-                                <dd>${newlist.details}</dd>
-                            </dl>
-                        </c:if>
-                    <%--</li>--%>
-                    <%--<li>--%>
-                        <dl>
-                            <c:if test="${newlist.id==97}">
-                                <dt><a href="javascript:">${newlist.title}</a></dt>
-                                <dd>${newlist.details}</dd>
-                            </c:if>
-                        </dl>
-                    <%--</li>--%>
-                <%--</ul>--%>
-                 </c:forEach>
-                <div class="Lj-news-page">共6条记录 1/1页<a href="javascript:">首页</a><a href="javascript:">上一页</a><a href="javascript:">下一页</a><a href="javascript:">尾页</a>第<select class="select"><option>1</option><option>2</option></select>页</div>
+                      </c:if>
              </div>
-
+                 </c:forEach>
+                 <div class="Lj-news-page">共6条记录 1/1页<a href="javascript:">首页</a><a href="javascript:">上一页</a><a href="javascript:">下一页</a><a href="javascript:">尾页</a>第<select class="select"><option>1</option><option>2</option></select>页</div>
              <!--text end-->
               
               

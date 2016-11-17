@@ -23,8 +23,7 @@
             <a href="#" class="blgreen" style="color: lightblue">商铺管理</a>
             <div class="open"></div>
             <ul>
-                <li><a href="forms.html">查看商铺</a></li>
-                <li><a href="validation.html">商铺管理</a></li>
+                <li><a href="back_business">商铺管理</a></li>
             </ul>
         </li>
         <!--<li><a href="statistic.html" class="blred">Statistic</a></li>                -->
