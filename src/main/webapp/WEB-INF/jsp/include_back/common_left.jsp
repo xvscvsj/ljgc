@@ -3,8 +3,10 @@
     <a href="back_index" class="logo"></a>
     <div class="search">
         <div class="input-prepend">
-            <span class="add-on orange"><span class="icon-search icon-white"></span></span>
-            <input type="text" placeholder="关键字搜索..."/>
+           <form action="search" method="get">
+            <button type="submit" style="height:31px;width: 40px;background-color: red"><span class="add-on orange"><span class="icon-search icon-white"></span></span></button>
+            <input type="text" placeholder="关键字搜索..." name="keyword"/>
+           </form>>
         </div>
     </div>
 </div>

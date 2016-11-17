@@ -35,4 +35,21 @@ public class BackOrdersDaoTest {
         }
     }
 
+
+
+    @Test
+    public void test1(){
+//        List<Orders> list= backOrdersDao.search("5");
+//        for (Orders each:list) {
+//            System.out.println("电话"+each.getOrderPhone());
+//            System.out.println(each.getPayPersons().size());
+////            Set<PayPerson> payPerson = each.getPayPersons();
+////            for (PayPerson s:payPerson){
+////
+////            }
+//        }
+
+        List list=backOrdersDao.search("5");
+        System.out.println(list.size());
+    }
 }

@@ -12,4 +12,9 @@ public interface BackOrdersService {
     List<Orders> findOrders();
 
     void delOrder(String orderId);
+
+    void modOrder(Orders orders);
+
+    //关键字搜索
+    List search(String keyword);
 }

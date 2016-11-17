@@ -11,4 +11,8 @@ public interface BackOrdersDao {
     List<Orders> findOrders();
 
     void delOrder(String orderId);
+
+    void modOrder(Orders orders);
+
+    List search(String keyword);
 }
