@@ -43,21 +43,18 @@
     <script type='text/javascript' src='../../js/actions.js'></script>
     <script type="text/javascript">
         function show(orderId){
-//            给id是oid的赋值orderId
-            $("#oid").append(orderId);
-//            alert(orderId)
             var x=event.clientX;
             var y=event.clientY;
             document.getElementById("pic").style.top=y+50;
             document.getElementById("pic").style.left=x;
             document.getElementById("pic").style.visibility="visible";
-//        var formDiv="<form action='#'>";
-//        formDiv+="订票人电话号码: <input type='text' name='user' /><br>";
-//        formDiv+="订票状态:    <input type='text' name='pass' /><br><br>";
-//        formDiv+="<input type='submit' value='提交' onclick='hide()' /></form>";
-            var formDiv="<div class='container'style='padding-left: 90px'> <div class='row clearfix'> <div class='col-md-6 column'><h2>修改订单信息</h2><form action='back_order' method='post'> <div class='form-group'><label for='inputEmail3' class='col-sm-3 control-label'>订单状态：</label> <div class='col-sm-9'> <input type='email' class='form-control' id='inputEmail3' name='orderStatus'/> </div> <label for='inputEmail3' class='col-sm-3 control-label'>订单手机号：</label> <div class='col-sm-9'> <input type='email' class='form-control' id='inputEmail3' name='orderPhone' /><input type='hidden' id='oid' name='oid'> </div> </div> <p> <div class='form-group'> <div class='col-sm-offset-2 col-sm-10' style='margin-left: 200px'> <input type='submit' class='btn btn-default' onclick='hide()' value='保存'> </input> &nbsp; <button type='button' class='btn btn-default' onclick='hide()'>取消</button></div></div></form>";
+            var formDiv="<div class='container'style='padding-left: 90px'> <div class='row clearfix'> <div class='col-md-6 column'><h2>修改订单信息</h2><form action='mod_order' method='post'> <div class='form-group'><label for='inputEmail3' class='col-sm-3 control-label'>订单状态：</label> <div class='col-sm-9'> <input type='text' class='form-control' id='inputEmail3' name='orderStstus' style='width: 20%'/> </div> <label for='inputEmail3' class='col-sm-3 control-label'>订单手机号：</label> <div class='col-sm-9'> <input type='text' class='form-control' id='inputEmail3' name='orderPhone' style='width: 20%' /><input type='hidden' id='oid' name='orderId' style='width: 20%'> </div> </div> <p> <div class='form-group'> <div class='col-sm-offset-2 col-sm-10' style='margin-left: 200px'> <input type='submit' class='btn btn-default' onclick='hide()' value='保存'> </input> &nbsp; <button type='button' class='btn btn-default' onclick='hide()'>取消</button></div></div></form>";
+            //把表单插入到id为pic
             document.getElementById("pic").innerHTML=formDiv;
+//            给input的id是oid的赋值orderId
+            document.getElementById('oid').value = orderId;
         }
+        //当点击hide方法是隐藏表单
         function hide(){
             document.getElementById("pic").style.visibility="hidden";
         }
@@ -179,8 +176,8 @@
                                                 <%--订单操作--%>
                                                 <td>
                                                     <%--点击修改--%>
-                                                    <a href="#" class="button green" onclick="show('${order.orderId}')">
-                                                        <div class="icon"><span class="ico-pencil"></span></div>
+                                                    <a href="#" class="button green">
+                                                        <div class="icon"><span class="ico-pencil"  onclick="show('${order.orderId}')"></span></div>
                                                     </a>
                                                      <%--点击删除订单--%>
                                                     <a href="del_order?orderId=${order.orderId}" class="button red" onclick="return confirm('确定将此订单删除?')">
@@ -206,6 +203,6 @@
         </div>
         
     </div>
-    <div class="dialog" id="source" style="display: none;" title="Source"></div>      
+    <div class="dialog" id="source" style="display: none;" title="Source"></div>
 </body>
 </html>

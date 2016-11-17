@@ -99,7 +99,7 @@
                     <div class="icon">
                         <span class="ico-layout-7"></span>
                     </div>
-                    <h1>订单管理</h1>
+                    <h1>搜索</h1>
                 </div>
 
                 <div class="row-fluid">
@@ -107,14 +107,42 @@
                         <div class="block">
                             <div class="head dblue">
                                 <div class="icon"><span class="ico-layout-9"></span></div>
-                                <h2>编辑订单</h2>
+                                <h2>搜索结果</h2>
                                 <ul class="buttons">
                                     <li><a href="#" onClick="source('table_sort_pagination'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
                                 </ul>                                                        
                             </div>                
                                 <div class="data-fluid">
-                              <%--${ordersList}--%>
-                                   订单号：
+
+                                    <table class="table fpTable lcnp" cellpadding="0" cellspacing="0" width="100%">
+                                        <thead>
+                                        <tr>
+                                            <th><input type="checkbox" class="checkall"/></th>
+                                            <th width="10%">编号</th>
+                                            <th width="30%">全称</th>
+                                            <th width="30%">类别</th>
+                                            <th width="20%">联系方式</th>
+                                            <th width="10%">操作</th>
+
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <c:forEach var="order" items="${ordersList}">
+                                            <tr>
+                                                <td><input type="checkbox" name="order[]" value="528"/></td>
+                                                    <%--取出订单号--%>
+                                                <td><a href="#">1</a></td>
+                                                    <%--如果一个订单，有多个人买票，取出数据样式排版还未解决--%>
+                                                <td>张三</td>
+                                                <td>订单</td>
+                                                <td>18331812144</td>
+                                                <td>查看<div class="icon"><span class="ico-remove"></span></div></td>
+
+                                            </tr>
+                                        </c:forEach>
+                                        </tbody>
+                                    </table>
 
 
 

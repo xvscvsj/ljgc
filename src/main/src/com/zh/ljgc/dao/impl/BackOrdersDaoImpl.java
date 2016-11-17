@@ -2,6 +2,7 @@ package com.zh.ljgc.dao.impl;
 
 import com.zh.ljgc.dao.BackOrdersDao;
 import com.zh.ljgc.entity.Orders;
+import com.zh.ljgc.entity.PayPerson;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -36,5 +37,31 @@ public class BackOrdersDaoImpl implements BackOrdersDao {
         orders.setOrderId(orderId);
         session.delete(orders);
         session.getTransaction().commit();
+    }
+
+    @Override
+    public void modOrder(Orders orders) {
+        Session session=sessionFactory.openSession();
+        session.beginTransaction();
+        session.createQuery("update Orders o set o.orderPhone=:phone,o.orderStstus=:status,o.orderPayTime=:payTime where o.orderId=:id")
+                .setParameter("phone",orders.getOrderPhone())
+                .setParameter("status",orders.getOrderStstus())
+                .setParameter("payTime",orders.getOrderPayTime())
+                .setParameter("id",orders.getOrderId()).executeUpdate();
+        session.getTransaction().commit();
+
+    }
+
+    @Override
+    public List search(String keyword) {
+        Session session=sessionFactory.openSession();
+        session.beginTransaction();
+
+        Query query=session.createQuery("from PayPerson p,Orders o left  join fetch o.payPersons  where o.orderId like :id or p.paypersonName like :name")
+                .setParameter("id","%"+keyword+"%")
+                .setParameter("name","%"+keyword+"%");
+        List list=query.list();
+        session.getTransaction().commit();
+        return list;
     }
 }

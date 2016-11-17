@@ -37,7 +37,7 @@ public class OrdersDaoImpl implements OrdersDao {
         Session session=sessionFactory.openSession();
 //        Query query= session.createQuery("select distinct o from Orders o left  join fetch o.payPersons");//取所有
         //左外连接加条件（两张表都设置相应条件查询）
-        Query query= session.createQuery("from PayPerson p,Orders o left  join fetch o.payPersons where o.orderId=:orderId and p.paypersonCardNo=:CardNo")
+        Query query= session.createQuery("from PayPerson p,Orders o left  join fetch o.payPersons where o.orderId=:orderId or p.paypersonCardNo=:CardNo")
                 .setParameter("orderId",payPerson.getOrders().getOrderId()).setParameter("CardNo",payPerson.getPaypersonCardNo());
         List<Orders> ordersList=query.list();
         return ordersList;

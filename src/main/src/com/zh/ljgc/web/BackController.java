@@ -47,25 +47,35 @@ public class BackController {
 
 //    编辑订单
     @RequestMapping("/mod_order")
-    public String modOrder(String orderId,Model model){
-//        System.out.println(orderId);
+    public String modOrder(Orders orders,Model model){
+        System.out.println("or:"+orders.getOrderId());
+        System.out.println("p:"+orders.getOrderPhone());
+        System.out.println("Ststus:"+orders.getOrderStstus());
+//        编辑后的订单信息传到dao,去修改数据库里的信息
+        backOrdersService.modOrder(orders);
+//        查询更新后的订单
         List<Orders> ordersList=backOrdersService.findOrders();
-        for (Orders each:ordersList) {
-            if (each.getOrderId().equals(orderId)){
-
-            }
-        }
-
-        return "back_orderModify";
+        model.addAttribute("ordersList",ordersList);
+        return "back_order";
     }
 
 
-    @RequestMapping("/cs")
-    public String cs(String orderStatus,String orderPhone,String id){
-        System.out.println("Stat:"+orderStatus);
-        System.out.println("phone:"+orderPhone);
-        System.out.println("id:"+id);
-        return "cs";
+    //关键字搜索
+    @RequestMapping("/search")
+    public String search(String keyword){
+       List searchList=backOrdersService.search(keyword);
+        System.out.println("keyword:"+keyword);
+        return "back_keywordSearch";
     }
+
+
+
+//    @RequestMapping("/cs")
+//    public String cs(String orderStatus,String orderPhone,String oid){
+//        System.out.println("Stat:"+orderStatus);
+//        System.out.println("phone:"+orderPhone);
+//        System.out.println("id:"+oid);
+//        return "cs";
+//    }
 
 }

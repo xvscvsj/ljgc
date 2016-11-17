@@ -15,7 +15,7 @@
         <property name="orderStstus"/>
         <property name="orderPayTime"/>
 
-        <set name="payPersons" cascade="all">
+        <set name="payPersons" cascade="save-update">
             <key column="order_Id"/>
             <one-to-many class="PayPerson"/>
         </set>
