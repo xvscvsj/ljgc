@@ -5,14 +5,12 @@
 <!-- package 实体所在的包名 -->
 <hibernate-mapping package="com.zh.ljgc.entity">
     <!-- name 类名，table 表名 -->
-    <class name="Title" table="title">
+    <class name="Channel" table="channel">
         <id name="id">
             <generator class="native" />
         </id>
-        <property name="titleName" />
-        <property name="img"/>
-        <property name="video"/>
-
-            <many-to-one name="part" class="Part" column="column_id"/>
+        <property name="name" />
+        <property name="description"/>
+        <property name="logo"/>
     </class>
 </hibernate-mapping>

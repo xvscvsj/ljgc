@@ -5,10 +5,17 @@
 <!-- package 实体所在的包名 -->
 <hibernate-mapping package="com.zh.ljgc.entity">
     <!-- name 类名，table 表名 -->
-    <class name="Part" table="part">
-        <id name="columnId">
+    <class name="Hotel" table="hotel">
+        <id name="sid" column="sid">
             <generator class="native" />
         </id>
-        <property name="columnName" />
+        <property name="sroom" />
+        <property name="sbed" />
+        <property name="sbreakfast" />
+        <property name="swiff" />
+        <property name="sprice" />
+        <property name="sdiscount" />
     </class>
+
+
 </hibernate-mapping>

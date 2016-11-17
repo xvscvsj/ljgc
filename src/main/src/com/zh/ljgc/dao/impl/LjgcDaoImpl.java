@@ -1,8 +1,7 @@
 package com.zh.ljgc.dao.impl;
 
 import com.zh.ljgc.dao.BaseDao;
-import com.zh.ljgc.entity.Part;
-import com.zh.ljgc.entity.Title;
+import com.zh.ljgc.entity.Content;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -15,17 +14,73 @@ import java.util.List;
  * Created by DELL on 2016/11/7.
  */
 @Repository
-public class LjgcDaoImpl implements BaseDao<Title> {
+public class LjgcDaoImpl implements BaseDao<Content> {
     @Autowired
     private SessionFactory sessionFactory ;
     @Override
-    public List<Title> findAll() {
+    public List<Content> findAll() {
         Session session = sessionFactory.openSession();
        // session.beginTransaction();
-        Query query=session.createQuery("from Title");
-        List<Title> titleList=query.list();
+        Query query=session.createQuery("from Content");
+        List<Content> contentList=query.list();
         //session.beginTransaction().commit();
-        return titleList;
+        return contentList;
     }
+    public List<Content> query(){
+        Session session=sessionFactory.openSession();
 
+        Query query=session.createQuery("from Content");
+        List<Content> contents=query.list();
+        return contents;
+    }
+    //古城新闻数据
+    public List<Content> findnew(){
+        //查询期刊数据 //开启事物
+        Session session=sessionFactory.openSession();
+//        session.beginTransaction();
+        Query query =session.createQuery("from Content");
+        List<Content> newlists=query.list();
+//        session.getTransaction().commit();
+        return newlists;
+    }
+    //期刊页面数据
+    public List<Content> find(){
+        //查询期刊数据 //开启事物
+        Session session=sessionFactory.openSession();
+//        session.beginTransaction();
+        Query query =session.createQuery("from Content");
+        List<Content> periodicalList=query.list();
+//        session.getTransaction().commit();
+        return periodicalList;
+    }
+    //古城
+    public List<Content> findcity(){
+        //查询期刊数据 //开启事物
+        Session session=sessionFactory.openSession();
+//        session.beginTransaction();
+        Query query =session.createQuery("from Content");
+        List<Content> cityList=query.list();
+//        session.getTransaction().commit();
+        return cityList;
+    }
+    //恋在古城数据
+    public List<Content> findlove(){
+        //查询期刊数据 //开启事物
+        Session session=sessionFactory.openSession();
+//        session.beginTransaction();
+        Query query =session.createQuery("from Content");
+        List<Content> loveList=query.list();
+//        session.getTransaction().commit();
+        return loveList;
+    }
+    //视频页面数据
+    public List<Content> findvideo(){
+        //查询期刊数据 //开启事物
+        Session session=sessionFactory.openSession();
+//        session.beginTransaction();
+        Query query =session.createQuery("from Content");
+        List<Content> videoList=query.list();
+//        session.getTransaction().commit();
+        return videoList;
+    }
 }

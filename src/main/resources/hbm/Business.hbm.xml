@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- package 实体所在的包名 -->
+<hibernate-mapping package="com.zh.ljgc.entity">
+    <!-- name 类名，table 表名 -->
+    <class name="Business" table="business">
+        <id name="gid" column="gid">
+            <generator class="native" />
+        </id>
+        <property name="garea" />
+        <property name="gprice" />
+        <property name="gfacilities" />
+        <property name="gname" />
+        <property name="gmain" />
+        <property name="gaddress" />
+        <property name="gphone" />
+    </class>
+
+
+</hibernate-mapping>
