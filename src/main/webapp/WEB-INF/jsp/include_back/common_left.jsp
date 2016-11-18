@@ -17,16 +17,16 @@
             <a href="#" class="blyellow" style="color: lightblue">栏目管理</a>
             <div class="open"></div>
             <ul>
-                <li><a href="back_channelList">查看栏目</a></li>
-                <li><a href="back_addChannelList">添加栏目</a></li>
+                <li><a href="ui.html">查看栏目</a></li>
+                <li><a href="widgets.html">添加栏目</a></li>
             </ul>
         </li>
         <li>
             <a href="#" class="blgreen" style="color: lightblue">商铺管理</a>
             <div class="open"></div>
             <ul>
-                <li><a href="">查看商铺</a></li>
-                <li><a href="validation.html">商铺管理</a></li>
+                <li><a href="back_business">商铺管理</a></li>
+                <li><a href="back_addbus">添加商铺</a></li>
             </ul>
         </li>
         <!--<li><a href="statistic.html" class="blred">Statistic</a></li>                -->

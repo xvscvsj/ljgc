@@ -17,6 +17,7 @@
 
 <body>
 <%request.getAttribute("FoodData");%>
+
    <!--background picture begin-->
    <div class="picture" id="picture"><img id="bgImg" src="../images/home_top_bg.jpg" height="742"></div>
    <!--background picture end-->
@@ -48,17 +49,15 @@
              <div class="Lj-Bar-List">
 
                 <ul>
+                    <c:forEach var="foodData" items="${pagination.list}">
                    <li>
                        <div class="Bar-flash">
 
                            <!--显示大图 begin-->
                            <div class="Bar-big">
-                               <c:forEach var="foodData" items="${FoodData}">
-                                   <%--<c:if test="${foodData.fid=1}">--%>
                                        <a href="javascript:"><img id="bigImg" class="pic-img" width="176" height="127" src="${foodData.fimg}"/>
                                        </a>
-                                   <%--</c:if>--%>
-                               </c:forEach>
+
                                </div>
                            <!--显示大图 end-->
 
@@ -84,68 +83,31 @@
 
                        <!--详情 begin-->
                        <div class="Bar-Text">
-                        <c:forEach var="foodData" items="${FoodData}">
+
 
                           <h1 class="Bar-h1"><a href="javascript:">${foodData.foodname}</a></h1>
                           <span class="Bar-Txt">${foodData.fspeak}</span>
                           <i class="Bar-Text-i">地址：${foodData.faddress}</i>
                           <i class="Bar-Text-i">电话：${foodData.fphone}</i>
                             <%--</c:if>--%>
-                        </c:forEach>
+
                        </div>
                        <!--详情 end-->
                    </li>
-
-				   <<li>
-                    <div class="Bar-flash">
-
-                        <!--显示大图 begin-->
-                        <div class="Bar-big">
-                            <c:forEach var="foodData" items="${FoodData}">
-                                <%--<c:if test="${foodData.fid=1}">--%>
-                                    <a href="javascript:"><img id="bigImg" class="pic-img" width="176" height="127" src="${foodData.fimg}"/>
-                                    </a>
-                                <%--</c:if>--%>
-                            </c:forEach>
-                        </div>
-                        <!--显示大图 end-->
-
-                        <!--Bar-circle begin-->
-                        <div class="Bar-circle">
-                            <a class="clickL" href="javaScript:Scroll('Direction',1)"><img id="oBtn_Left" src="../images/icon_07_03.jpg"/></a>
-                            <div id="smallImg" class="picarea">
-                                <div class="imgbox" id="smallSpace">
-                                    <a href="javascript:"><img src="../images/img_01_16.jpg" onclick="changeBigImg(this)"/></a>
-                                    <a href="javascript:"><img src="../images/img_01_17.jpg" onclick="changeBigImg(this)"/></a>
-                                    <a href="javascript:"><img src="../images/img_01_18.jpg" onclick="changeBigImg(this)"/></a>
-                                    <a href="javascript:"><img src="../images/img_01_19.jpg" onclick="changeBigImg(this)"/></a>
-                                    <a href="javascript:"><img src="../images/img_01_20.jpg" onclick="changeBigImg(this)"/></a>
-                                    <a href="javascript:"><img src="../images/img_01_21.jpg" onclick="changeBigImg(this)"/></a>
-                                    <a href="javascript:"><img src="../images/img_01_22.jpg" onclick="changeBigImg(this)"/></a>
-                                </div>
-                            </div>
-                            <a class="clickR" href="javaScript:Scroll('Direction',-1)"><img id="oBtn_Right" src="../images/icon_07_02.jpg"/></a>
-                        </div>
-                        <!--Bar-circle end-->
-
-                    </div>
-
-                    <!--详情 begin-->
-                    <div class="Bar-Text">
-                        <c:forEach var="foodData" items="${FoodData}">
-
-                                <h1 class="Bar-h1"><a href="javascript:">${foodData.foodname}</a></h1>
-                                <span class="Bar-Txt">${foodData.fspeak}</span>
-                                <i class="Bar-Text-i">地址：${foodData.faddress}</i>
-                                <i class="Bar-Text-i">电话：${foodData.fphone}</i>
-
-                        </c:forEach>
-                    </div>
-                    <!--详情 end-->
-                </li>
+                    </c:forEach>
                 </ul>
+                <div class="Lj-news-page">共${pagination.totalPage}页记录
+                    <a href="food?pageNo=1">首页</a>
 
-                <div class="Lj-news-page">共6条记录 1/1页<a href="javascript:">首页</a><a href="javascript:">上一页</a><a href="javascript:">下一页</a><a href="javascript:">尾页</a>第<select class="select"><option>1</option><option>2</option></select>页</div>
+
+                    <c:if test="${!pagination.firstPage}">
+                        <a href="food?pageNo=${pagination.prePage}" id="nextpage" title="" accesskey="n">上一页</a>&nbsp;
+                    </c:if>
+                    <c:if test="${!pagination.lastPage}">
+                        <a href="food?pageNo=${pagination.nextPage}" id="nextpage" title="" accesskey="n">下一页</a>&nbsp;
+                    </c:if>
+
+                    <a href="food?pageNo=${pagination.totalPage}">尾页</a>
              </div>
              <!--text end-->
               

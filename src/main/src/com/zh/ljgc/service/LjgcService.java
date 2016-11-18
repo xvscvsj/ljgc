@@ -1,6 +1,7 @@
 package com.zh.ljgc.service;
 
 import com.zh.ljgc.entity.Content;
+import com.zh.ljgc.utils.page.Pagination;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +14,7 @@ import java.util.List;
 public class LjgcService extends BaseService<Content> {
 
     @Override
+
     @Transactional
     public List<Content> findAll() {
         return super.findAll();
@@ -35,4 +37,5 @@ public class LjgcService extends BaseService<Content> {
     public List<Content> findvideo(){
         return super.findvideo();
     }
+
 }

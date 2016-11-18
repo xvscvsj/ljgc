@@ -1,7 +1,9 @@
 package com.zh.ljgc.dao.impl;
 
 import com.zh.ljgc.dao.BaseDao;
+import com.zh.ljgc.entity.Business;
 import com.zh.ljgc.entity.Content;
+import com.zh.ljgc.utils.page.Pagination;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -18,6 +20,7 @@ public class LjgcDaoImpl implements BaseDao<Content> {
     @Autowired
     private SessionFactory sessionFactory ;
     @Override
+    //首页数据
     public List<Content> findAll() {
         Session session = sessionFactory.openSession();
        // session.beginTransaction();
@@ -26,6 +29,7 @@ public class LjgcDaoImpl implements BaseDao<Content> {
         //session.beginTransaction().commit();
         return contentList;
     }
+    //三级新闻数据
     public List<Content> query(){
         Session session=sessionFactory.openSession();
 
@@ -82,5 +86,19 @@ public class LjgcDaoImpl implements BaseDao<Content> {
         List<Content> videoList=query.list();
 //        session.getTransaction().commit();
         return videoList;
+    }
+
+
+    @Override
+    public Pagination findct(Integer pageNo, Integer pageSize) {
+        Session session=sessionFactory.openSession();
+        Long cont=(Long)(session.createQuery("select count(c.id) from Content c").getSingleResult());
+        Pagination result =new Pagination(pageNo,pageSize,cont.intValue());
+        List list=session.createQuery("from Content")
+                .setFirstResult(result.getFirstResult())
+                .setMaxResults(result.getPageSize())
+                .list();
+        result.setList(list);
+        return result;
     }
 }

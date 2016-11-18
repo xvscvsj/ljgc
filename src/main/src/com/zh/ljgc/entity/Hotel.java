@@ -1,17 +1,26 @@
 package com.zh.ljgc.entity;
 
+import javax.persistence.Entity;
+
 /**
  * Created by Administrator on 2016/11/15 0015.
  */
+@Entity
 public class Hotel {
+    //酒店号
     private Integer sid;
+    //房型
     private String sroom;
+    //床型
     private String sbed;
+    //早餐
     private String sbreakfast;
+    //宽带
     private String swiff;
+    //价格
     private String sprice;
+    //优惠
     private String sdiscount;
-
     public Hotel() {
     }
 
@@ -24,6 +33,8 @@ public class Hotel {
         this.sprice = sprice;
         this.sdiscount = sdiscount;
     }
+
+
 
     public Integer getSid() {
         return sid;
@@ -80,4 +91,5 @@ public class Hotel {
     public void setSdiscount(String sdiscount) {
         this.sdiscount = sdiscount;
     }
+
 }

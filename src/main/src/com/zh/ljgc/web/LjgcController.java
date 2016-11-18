@@ -2,6 +2,7 @@ package com.zh.ljgc.web;
 
 import com.zh.ljgc.entity.Content;
 import com.zh.ljgc.service.LjgcService;
+import com.zh.ljgc.utils.page.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -60,6 +61,21 @@ public class LjgcController {
         model.addAttribute("City",cityList);
         return "Lj-Impression";
     }
+//    @RequestMapping("/city")
+//    public String test(Integer pageNo, Integer pageSize, Model model){
+//        if (pageNo==null){
+//            pageNo=1;
+//        }
+//        if (pageSize==null){
+//            pageSize=1;
+//        }
+//        List<Content> contentList=ljgcService.findAll();
+//        model.addAttribute("contentList",contentList);
+//        Pagination pagination=ljgcService.findct(pageNo,pageSize);
+//        model.addAttribute("pagination",pagination);
+//        return "Lj-Impression";
+//    }
+
     @RequestMapping("/love")
     public String findlove(Model model){
         List<Content> loveList =ljgcService.findlove();

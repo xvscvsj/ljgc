@@ -20,6 +20,7 @@ import java.util.List;
   @Autowired
    private SessionFactory sessionFactory;
     @Override
+    //后台栏目数据
     public List<Content> findList() {
         Session session=sessionFactory.openSession();
         List<Content> contentList=new ArrayList<Content>();
@@ -27,7 +28,7 @@ import java.util.List;
         contentList=query.list();
         return contentList;
     }
-
+    //删除栏目数据
     @Override
     public void delList(Integer id) {
         Session session=sessionFactory.openSession();
@@ -41,10 +42,11 @@ import java.util.List;
     }
 
     @Override
-    public void addList(Content content) {
+    public void addList(Content content, Channel channel) {
        Session session=sessionFactory.openSession();
         session.beginTransaction();
         session.save(content);
+        session.save(channel);
         session.getTransaction().commit();
     }
 }

@@ -16,6 +16,10 @@
         <property name="gmain" />
         <property name="gaddress" />
         <property name="gphone" />
+       <set name="hotel" cascade="all" lazy="true">
+           <key column="gid"/>
+           <one-to-many class="Hotel"/>
+       </set>
     </class>
 
 

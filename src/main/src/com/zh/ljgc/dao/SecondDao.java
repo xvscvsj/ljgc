@@ -2,6 +2,7 @@ package com.zh.ljgc.dao;
 
 
 import com.zh.ljgc.entity.*;
+import com.zh.ljgc.utils.page.Pagination;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -15,19 +16,35 @@ import java.util.List;
  */
 @Repository
 public class SecondDao<m>{
+
     @Autowired
     private SessionFactory sessionFactory;
-    //美食页面数据
-    public List<ShopFoodEntity> queryfood(){
+
+//    //美食页面数据
+//    public List<ShopFoodEntity> queryfood(){
+//        //开启事物
+//        Session session=sessionFactory.openSession();
+//        session.beginTransaction();
+//        //查询美食数据
+//        Query query =session.createQuery("from ShopFoodEntity");
+//        //将数据放到list集合中
+//        List<ShopFoodEntity> foodEntityList=query.list();
+//        session.getTransaction().commit();
+//        return foodEntityList;
+//    }
+//
+    //美食页面分页
+    public Pagination foodlist(Integer pageNo,Integer pageSize){
         //开启事物
         Session session=sessionFactory.openSession();
-        session.beginTransaction();
-        //查询美食数据
-        Query query =session.createQuery("from ShopFoodEntity");
-        //将数据放到list集合中
-        List<ShopFoodEntity> foodEntityList=query.list();
-        session.getTransaction().commit();
-        return foodEntityList;
+        Long cont=(Long)(session.createQuery("select count(s.fid) from ShopFoodEntity s").getSingleResult());
+        Pagination result =new Pagination(pageNo,pageSize,cont.intValue());
+        List list=session.createQuery("from ShopFoodEntity")
+                .setFirstResult(result.getFirstResult())
+                .setMaxResults(result.getPageSize())
+                .list();
+        result.setList(list);
+        return result;
     }
 //    //期刊页面数据
 //    public List<Periodical> find(){

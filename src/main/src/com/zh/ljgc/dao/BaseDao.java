@@ -1,6 +1,8 @@
 package com.zh.ljgc.dao;
 
+import com.zh.ljgc.entity.Business;
 import com.zh.ljgc.entity.Content;
+import com.zh.ljgc.utils.page.Pagination;
 
 import java.util.List;
 
@@ -15,4 +17,8 @@ public interface BaseDao<M> {
       public List<Content> findcity();
       public List<Content> findlove();
       public List<Content> findvideo();
+      //古城页面分篇
+      Pagination findct(Integer pageNo, Integer pageSize);
+
+
 }
