@@ -119,16 +119,17 @@
                                                 <th><input type="checkbox" class="checkall"/></th>
                                                 <th width="10%">商铺号</th>
                                                 <th width="20%">出售商品</th>
-                                                <th width="10%">单价</th>
+                                                <th width="15%">单价</th>
                                                 <th width="15%">电话</th>
-                                                <th width="10%">地址</th>
+                                                <th width="20%">地址</th>
                                                 <th width="10%">优惠</th>
-                                                <th width="80" class="TAC">操作</th>
+                                                <%--<th width="80" class="TAC">操作</th>--%>
                                             </tr>
                                         </thead>
 
                                         <tbody>
                                             <c:forEach var="business" items="${Business}">
+                                                <c:if test="${business.gid>=15}">
                                                 <c:forEach var="hotel" items="${Hotel}">
                                             <tr>
                                                 <td><input type="checkbox" name="order[]" value="528"/></td>
@@ -158,20 +159,21 @@
                                                 <td>
                                                     ${hotel.sdiscount}<br>
                                                </td>
-                                                <%--订单操作--%>
-                                                <td>
-                                                    <%--点击修改--%>
-                                                    <a href="#" class="button green" onclick="show('${business.gid}')">
-                                                        <div class="icon"><span class="ico-pencil"></span></div>
-                                                    </a>
-                                                     <%--点击删除订单--%>
-                                                    <a href="del_order?gid=${business.gid}" class="button red" onclick="return confirm('确定将此订单删除?')">
-                                                        <div class="icon"><span class="ico-remove"></span></div>
-                                                    </a>                                              
-                                                </td>
+                                                <%--&lt;%&ndash;订单操作&ndash;%&gt;--%>
+                                                <%--<td>--%>
+                                                    <%--&lt;%&ndash;点击修改&ndash;%&gt;--%>
+                                                    <%--<a href="#" class="button green" onclick="show('${business.gid}')">--%>
+                                                        <%--<div class="icon"><span class="ico-pencil"></span></div>--%>
+                                                    <%--</a>--%>
+                                                     <%--&lt;%&ndash;点击删除订单&ndash;%&gt;--%>
+                                                    <%--<a href="del_order?gid=${business.gid}" class="button red" onclick="return confirm('确定将此订单删除?')">--%>
+                                                        <%--<div class="icon"><span class="ico-remove"></span></div>--%>
+                                                    <%--</a>                                              --%>
+                                                <%--</td>--%>
                                             </tr>
 
                                             </c:forEach>
+                                                </c:if>
                                             </c:forEach>
                                         </tbody>
                                     </table>

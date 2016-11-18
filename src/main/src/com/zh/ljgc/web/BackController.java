@@ -77,5 +77,11 @@ public class BackController {
 //        System.out.println("id:"+oid);
 //        return "cs";
 //    }
+//接收back_addbus.jsp页面数据
+    @RequestMapping("/back_addbus")
+    public String getbus(){
+
+      return "back_addbus";
+    }
 
 }
