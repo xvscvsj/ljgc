@@ -2,6 +2,7 @@ package com.zh.ljgc.dao;
 
 import com.zh.ljgc.entity.AdminUser;
 import com.zh.ljgc.entity.Orders;
+import com.zh.ljgc.entity.Search;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public interface BackOrdersDao {
 
     void modOrder(Orders orders);
 
-    List search(String keyword);
+    List<Search> search(String keyword);
 
     AdminUser loginTest();
 

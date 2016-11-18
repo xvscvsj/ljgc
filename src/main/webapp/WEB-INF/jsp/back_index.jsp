@@ -218,6 +218,8 @@
     
     <div class="dialog" id="source" style="display: none;" title="Source"></div>
 
-    
+    <div style="background-color: #ebebeb;height: 50px" >
+         <p> <div style="padding-left: 600px"><br>©2016 ljgc<a href="index"> 丽江古城首页</a></div>
+    </div>
 </body>
 </html>

@@ -10,7 +10,7 @@
         <a href="javascript:">携程网</a>|
         <a href="javascript:">泸沽湖</a>|
         <a href="javascript:">印象丽江</a>|
-        <a href="javascript:">古城之窗</a>|
+        <a href="back_login">后台管理</a>|
         <a href="javascript:">玉龙雪山</a>
     </div>
     <div class="footer-text">

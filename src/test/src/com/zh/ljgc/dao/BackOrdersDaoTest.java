@@ -2,6 +2,7 @@ package com.zh.ljgc.dao;
 
 import com.zh.ljgc.entity.Orders;
 import com.zh.ljgc.entity.PayPerson;
+import com.zh.ljgc.entity.Search;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,14 +40,12 @@ public class BackOrdersDaoTest {
 
     @Test
     public void test1(){
-        List<Orders> list=backOrdersDao.search("5");
-
-        for (Orders each:list) {
-            each.getOrderPhone();
+        List<Search> searchList=backOrdersDao.search("016");
+        for (Search each:searchList) {
+            System.out.println("id"+each.getNumberId());
+            System.out.println("全称："+each.getKeyName());
+            System.out.println("“类型："+each.getType());
         }
 
-//       for (int i=0;i<list.size();i++){
-//           System.out.println(list.get(i).toString());
-//       }
     }
 }

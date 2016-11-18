@@ -128,23 +128,30 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <c:forEach var="order" items="${ordersList}">
+                                        <c:forEach var="search" items="${searchList}">
                                             <tr>
                                                 <td><input type="checkbox" name="order[]" value="528"/></td>
                                                     <%--取出订单号--%>
-                                                <td><a href="#">1</a></td>
+                                                <td><a href="#">${search.numberId}</a></td>
                                                     <%--如果一个订单，有多个人买票，取出数据样式排版还未解决--%>
-                                                <td>张三</td>
-                                                <td>订单</td>
-                                                <td>18331812144</td>
-                                                <td>查看<div class="icon"><span class="ico-remove"></span></div></td>
+                                                <td>${search.keyName}</td>
+                                                <td>${search.type}</td>
+                                                <td>
+                                                    <c:choose>
+                                                       <c:when test="${search.contactNum==null}">
+                                                           电话已欠费
+                                                       </c:when>
+                                                       <c:otherwise>
+                                                           ${search.contactNum}
+                                                       </c:otherwise>
+                                                    </c:choose>
+                                                </td>
+                                                <td><a href="">查看详情</a></td>
 
                                             </tr>
                                         </c:forEach>
                                         </tbody>
                                     </table>
-
-
 
 
                                 </div>

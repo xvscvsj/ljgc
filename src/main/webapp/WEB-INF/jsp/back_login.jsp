@@ -54,26 +54,28 @@
         </div>        
         
         <div class="row-fluid">
-            <div class="row-form">
-                <div class="span12">
-                    <input type="text" name="login" placeholder="用户名"/>
+            <form action="login" method="post">
+                <div class="row-form">
+                    <div class="span12">
+                        <input type="text" name="username" placeholder="用户名"/>
+                    </div>
                 </div>
-            </div>
-            <div class="row-form">
-                <div class="span12">
-                    <input type="text" name="password" placeholder="密码"/>
-                </div>            
-            </div>
-            <div class="row-form">
-                <div class="span12">
-                    <input type="checkbox"/> 记住密码
+                <div class="row-form">
+                    <div class="span12">
+                        <input type="text" name="password" placeholder="密码"/>
+                    </div>
                 </div>
-            </div>
-            <div class="row-form">
-                <div class="span12">
-                    <a href="back_index" class="btn">登录 <span class="icon-arrow-next icon-white"></span></a>
-                </div>                
-            </div>
+                <div class="row-form">
+                    <div class="span12">
+                        <input type="checkbox"/> 记住密码
+                    </div>
+                </div>
+                <div class="row-form">
+                    <div class="span12">
+                        <button type="submit" class="btn">登录 <span class="icon-arrow-next icon-white"></span></button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     

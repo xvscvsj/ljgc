@@ -2,6 +2,7 @@ package com.zh.ljgc.web;
 
 import com.zh.ljgc.entity.AdminUser;
 import com.zh.ljgc.entity.Orders;
+import com.zh.ljgc.entity.Search;
 import com.zh.ljgc.service.BackOrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -78,9 +79,9 @@ public class BackController {
 
     //关键字搜索
     @RequestMapping("/search")
-    public String search(String keyword){
-       List searchList=backOrdersService.search(keyword);
-        System.out.println("keyword:"+keyword);
+    public String search(String keyword,Model model){
+       List<Search> searchList=backOrdersService.search(keyword);
+        model.addAttribute("searchList",searchList);
         return "back_keywordSearch";
     }
 
