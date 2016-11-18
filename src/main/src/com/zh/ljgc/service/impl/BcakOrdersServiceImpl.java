@@ -1,6 +1,7 @@
 package com.zh.ljgc.service.impl;
 
 import com.zh.ljgc.dao.BackOrdersDao;
+import com.zh.ljgc.entity.AdminUser;
 import com.zh.ljgc.entity.Orders;
 import com.zh.ljgc.service.BackOrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,10 @@ public class BcakOrdersServiceImpl implements BackOrdersService {
     @Override
     public List search(String keyword) {
         return backOrdersDao.search(keyword);
+    }
+
+    @Override
+    public AdminUser loginTest() {
+        return backOrdersDao.loginTest();
     }
 }

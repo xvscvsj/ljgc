@@ -1,5 +1,6 @@
 package com.zh.ljgc.web;
 
+import com.zh.ljgc.entity.AdminUser;
 import com.zh.ljgc.entity.Orders;
 import com.zh.ljgc.service.BackOrdersService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,21 @@ public class BackController {
     public String backLogin(){
         return "back_login";
     }
+
+    //条件判断用户名和密码是否正确
+    @RequestMapping("/login")
+    public String loginTest(AdminUser adminUser){
+        AdminUser user=backOrdersService.loginTest();
+        if (adminUser.getUsername().equals(user.getUsername())&&adminUser.getPassword().equals(user.getPassword())){
+            //如果用户名和密码正确就跳转到首页
+            return "back_index";
+        }else {
+            //否则重定向到登录界面，并且打印密码错误
+            return "redirect:back_login";
+        }
+
+    }
+
 //    后台首页
     @RequestMapping("/back_index")
     public String backIndex(){

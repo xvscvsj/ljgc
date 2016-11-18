@@ -1,6 +1,7 @@
 package com.zh.ljgc.dao.impl;
 
 import com.zh.ljgc.dao.BackOrdersDao;
+import com.zh.ljgc.entity.AdminUser;
 import com.zh.ljgc.entity.Orders;
 import com.zh.ljgc.entity.PayPerson;
 import org.hibernate.Session;
@@ -24,7 +25,7 @@ public class BackOrdersDaoImpl implements BackOrdersDao {
         Session session=sessionFactory.openSession();
         List<Orders> ordersList=new ArrayList<Orders>();
 //        “select distinct o”hql如果写上就去除重复
-        Query query=session.createQuery("select distinct o from Orders o left  join fetch o.payPersons");
+        Query query=session.createQuery("select distinct o from Orders o left  join fetch o.payPersons ");
         ordersList=query.list();
         return ordersList;
     }
@@ -62,6 +63,13 @@ public class BackOrdersDaoImpl implements BackOrdersDao {
                 .setParameter("name","%"+keyword+"%");
         List list=query.list();
         session.getTransaction().commit();
-        return null;
+        return list;
+    }
+
+    @Override
+    public AdminUser loginTest() {
+        Session session=sessionFactory.openSession();
+        AdminUser user=session.get(AdminUser.class,1);
+        return user;
     }
 }

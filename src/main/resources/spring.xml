@@ -22,6 +22,12 @@
                 <value>classpath*:/hbm/*.hbm.xml</value>
             </list>
         </property>
+        <!--注解hbm_注解功能只有AdminUser实体使用的-->
+        <property name="packagesToScan" >
+            <list>
+                <value>com.zh.ljgc.entity</value>
+            </list>
+        </property>
         <property name="hibernateProperties">
             <value>
                 hibernate.hbm2ddl.auto=update

@@ -1,5 +1,6 @@
 package com.zh.ljgc.service;
 
+import com.zh.ljgc.entity.AdminUser;
 import com.zh.ljgc.entity.Orders;
 
 import java.util.List;
@@ -17,4 +18,7 @@ public interface BackOrdersService {
 
     //关键字搜索
     List search(String keyword);
+
+    AdminUser loginTest();
 }
+
