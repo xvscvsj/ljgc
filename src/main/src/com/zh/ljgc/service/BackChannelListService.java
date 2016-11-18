@@ -12,4 +12,5 @@ public interface BackChannelListService {
 
     void delList(Integer id);
 
+    void addList(Content content);
 }

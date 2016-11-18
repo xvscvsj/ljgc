@@ -18,7 +18,7 @@
             <div class="open"></div>
             <ul>
                 <li><a href="back_channelList">查看栏目</a></li>
-                <li><a href="widgets.html">添加栏目</a></li>
+                <li><a href="back_addChannelList">添加栏目</a></li>
             </ul>
         </li>
         <li>

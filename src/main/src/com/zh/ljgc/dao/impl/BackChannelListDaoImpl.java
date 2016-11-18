@@ -1,6 +1,7 @@
 package com.zh.ljgc.dao.impl;
 
 import com.zh.ljgc.dao.BackChannelListDao;
+import com.zh.ljgc.entity.Channel;
 import com.zh.ljgc.entity.Content;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -15,7 +16,7 @@ import java.util.List;
  * Created by Administrator on 2016/11/18 0018.
  */
 @Repository
-public class BackChannelListDaoImpl implements BackChannelListDao{
+ class BackChannelListDaoImpl implements BackChannelListDao{
   @Autowired
    private SessionFactory sessionFactory;
     @Override
@@ -33,7 +34,17 @@ public class BackChannelListDaoImpl implements BackChannelListDao{
         session.beginTransaction();
         Content content=new Content();
         content.setId(id);
+//        Channel channel=new Channel();
+//        content.setChannel(channel);
         session.delete(content);
+        session.getTransaction().commit();
+    }
+
+    @Override
+    public void addList(Content content) {
+       Session session=sessionFactory.openSession();
+        session.beginTransaction();
+        session.save(content);
         session.getTransaction().commit();
     }
 }

@@ -28,7 +28,13 @@ public class BackChannelListController {
         backChannelListService.delList(id);
         List<Content> contentList=backChannelListService.findList();
         model.addAttribute("contentList",contentList);
-        return "del_channelList";
+        return "back_channelList";
+    }
+    @RequestMapping("/back_addChannelList")
+       public String addChannelList(Content content){
+        backChannelListService.addList(content);
+
+        return "back_addChannelList";
     }
     }
 

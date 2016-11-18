@@ -24,4 +24,9 @@ public class BackChannelListServiceImpl implements BackChannelListService{
     public void delList(Integer id)
     {backChannelListDao.delList(id);
     }
+
+    @Override
+    public void addList(Content content) {
+        backChannelListDao.addList(content);
+    }
 }

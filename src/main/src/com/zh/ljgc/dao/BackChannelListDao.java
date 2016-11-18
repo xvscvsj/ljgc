@@ -11,4 +11,6 @@ public interface BackChannelListDao {
     List<Content> findList();
 
     void delList(Integer id);
+
+    void addList(Content content);
 }
