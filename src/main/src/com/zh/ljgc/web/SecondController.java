@@ -101,6 +101,7 @@ public class SecondController {
 //        model.addAttribute("Video",videoList);
 //        return "Lj-Video";
 //    }
+    //商家数据
     @RequestMapping("/business")
     public String findhotel(Model model){
         List<Hotel> hotelList =secondService.findhotel();

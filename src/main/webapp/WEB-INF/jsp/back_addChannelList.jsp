@@ -125,7 +125,9 @@
                                 <div class="span3">栏目标题</div>
                                 <div class="span9"><input type="text"  placeholder="title" name="title"></div>
                             </div>
-                           <div> <div><button class="btn btn-success" type="submit">提交</button></div></div>
+                              <div class="row-form">
+                                <button class="btn btn-success" type="submit">提交</button>
+                              </div>
                           </form>
                         </div>
                     </div>
