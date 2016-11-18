@@ -2,6 +2,7 @@ package com.zh.ljgc.web;
 
 
 import com.zh.ljgc.entity.*;
+import com.zh.ljgc.service.BaseService;
 import com.zh.ljgc.service.LjgcService;
 import com.zh.ljgc.service.SecondService;
 import com.zh.ljgc.utils.page.Pagination;
@@ -20,8 +21,9 @@ import java.util.List;
  */
 @Controller
 public class SecondController {
-
-  @Autowired
+    @Autowired
+    private BaseService baseService;
+   @Autowired
   private SecondService secondService;
 
     @Autowired
@@ -122,4 +124,5 @@ public class SecondController {
         model.addAttribute("Business",busList);
         return "back_business";
     }
+
 }

@@ -1,6 +1,7 @@
 package com.zh.ljgc.dao.impl;
 
 import com.zh.ljgc.dao.BaseDao;
+import com.zh.ljgc.entity.Business;
 import com.zh.ljgc.entity.Content;
 import com.zh.ljgc.utils.page.Pagination;
 import org.hibernate.Session;
@@ -84,6 +85,7 @@ public class LjgcDaoImpl implements BaseDao<Content> {
 //        session.getTransaction().commit();
         return videoList;
     }
+
 
     @Override
     public Pagination findct(Integer pageNo, Integer pageSize) {

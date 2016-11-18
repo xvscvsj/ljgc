@@ -170,6 +170,7 @@
                                                     </a>                                              
                                                 </td>
                                             </tr>
+
                                             </c:forEach>
                                             </c:forEach>
                                         </tbody>

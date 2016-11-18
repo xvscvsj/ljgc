@@ -1,6 +1,7 @@
 package com.zh.ljgc.entity;
 
 import javax.persistence.Entity;
+import java.util.*;
 
 /**
  * Created by Administrator on 2016/11/15 0015.
@@ -23,11 +24,13 @@ public class Business {
     private String gaddress;
     //电话
     private String gphone;
+    private Set<Hotel> hotel;
+
 
     public Business() {
     }
 
-    public Business(Integer gid, String garea, String gprice, String gfacilities, String gname, String gmain, String gaddress, String gphone) {
+    public Business(Integer gid, String garea, String gprice, String gfacilities, String gname, String gmain, String gaddress, String gphone, Set<Hotel> hotel) {
         this.gid = gid;
         this.garea = garea;
         this.gprice = gprice;
@@ -36,6 +39,7 @@ public class Business {
         this.gmain = gmain;
         this.gaddress = gaddress;
         this.gphone = gphone;
+        this.hotel = hotel;
     }
 
     public Integer getGid() {
@@ -101,4 +105,13 @@ public class Business {
     public void setGphone(String gphone) {
         this.gphone = gphone;
     }
+
+    public Set<Hotel> getHotel() {
+        return hotel;
+    }
+
+    public void setHotel(Set<Hotel> hotel) {
+        this.hotel = hotel;
+    }
+
 }

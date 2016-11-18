@@ -2,6 +2,7 @@ package com.zh.ljgc.service;
 
 import com.zh.ljgc.dao.BaseDao;
 import com.zh.ljgc.dao.SecondDao;
+import com.zh.ljgc.entity.Business;
 import com.zh.ljgc.entity.Content;
 import com.zh.ljgc.utils.page.Pagination;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,6 @@ public class BaseService<M> {
     public List<Content> findvideo(){
         return baseDao.findvideo();
     }
-
 
     public Pagination findct(Integer pageNo, Integer pageSize) {
         return baseDao.findct(pageNo,pageSize);

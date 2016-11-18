@@ -1,5 +1,6 @@
 package com.zh.ljgc.dao;
 
+import com.zh.ljgc.entity.Business;
 import com.zh.ljgc.entity.Content;
 import com.zh.ljgc.utils.page.Pagination;
 
