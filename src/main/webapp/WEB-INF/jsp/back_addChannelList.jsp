@@ -106,39 +106,27 @@
                     <div class="block">
                         <div class="head dblue">
                             <div class="icon"><span class="ico-layout-9"></span></div>
-                            <h2>查看栏目</h2>
+                            <h2>添加栏目</h2>
                             <ul class="buttons">
                                 <li><a href="#" onClick="source('table_sort_pagination'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
                             </ul>
                         </div>
                         <div class="data-fluid">
-                            <table class="table fpTable lcnp" cellpadding="0" cellspacing="0" width="100%">
-                                <thead>
-                                <tr>
-                                    <th><input type="checkbox" class="checkall"/></th>
-                                    <th width="25%">栏目编号</th>
-                                    <th width="25%">栏目名字</th>
-                                    <th width="35%">栏目标题</th>
-                                    <th width="15%" class="TAC">操作</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <c:forEach var="contentList" items="${contentList}">
-                                    <tr>
-                                        <td><input type="checkbox" name="order[]" value="528"/></td>
-                                             <td>${contentList.id}</td>
-                                             <td>${contentList.channel.name}</td>
-                                              <td>${contentList.title}</td>
-                                        <td>
-                                            <a href="del_channelList?id=${contentList.id}" class="button red" onclick="return confirm('确定将栏目删除?')">
-                                                <div class="icon"><span class="ico-remove"></span></div>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                </c:forEach>
-
-                                </tbody>
-                            </table>
+                          <form action="back-addChannelList" method="post">
+                            <div class="row-form">
+                                <div class="span3">栏目编号</div>
+                                <div class="span9"><input type="text" placeholder="id" name="id"></div>
+                            </div>
+                            <div class="row-form">
+                                <div class="span3">栏目名</div>
+                                <div class="span9"><input type="text" placeholder="name" name="name"></div>
+                            </div>
+                            <div class="row-form">
+                                <div class="span3">栏目标题</div>
+                                <div class="span9"><input type="text"  placeholder="title" name="title"></div>
+                            </div>
+                           <div> <div><button class="btn btn-success" type="submit">提交</button></div></div>
+                          </form>
                         </div>
                     </div>
 
