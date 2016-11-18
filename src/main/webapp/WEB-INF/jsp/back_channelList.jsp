@@ -1,6 +1,6 @@
-<!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -8,7 +8,7 @@
     <!--[if gt IE 8]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <![endif]-->
-    <title>Tables - Aries Premium Admin Template</title>
+    <title>Dynamic Tables - Aries Premium Admin Template</title>
     <link rel="icon" type="image/ico" href="favicon.ico"/>
 
     <link href="../../css/stylesheets.css" rel="stylesheet" type="text/css" />
@@ -30,6 +30,8 @@
 
     <script type='text/javascript' src="../../js/plugins/uniform/jquery.uniform.min.js"></script>
 
+    <script type='text/javascript' src='../../js/plugins/datatables/jquery.dataTables.min.js'></script>
+
     <script type='text/javascript' src='../../js/plugins/shbrush/XRegExp.js'></script>
     <script type='text/javascript' src='../../js/plugins/shbrush/shCore.js'></script>
     <script type='text/javascript' src='../../js/plugins/shbrush/shBrushXml.js'></script>
@@ -39,7 +41,6 @@
     <script type='text/javascript' src='../../js/plugins.js'></script>
     <script type='text/javascript' src='../../js/charts.js'></script>
     <script type='text/javascript' src='../../js/actions.js'></script>
-
 </head>
 <body>
 <div id="loader"><img src="../../img/loader.gif"/></div>
@@ -47,196 +48,41 @@
 
     <div class="sidebar">
 
-        <div class="top">
-            <a href="index-2.html" class="logo"></a>
-            <div class="search">
-                <div class="input-prepend">
-                    <span class="add-on orange"><span class="icon-search icon-white"></span></span>
-                    <input type="text"/>
-                </div>
-            </div>
-        </div>
-
-        <ul class="navigation">
-            <li><a href="index-2.html" class="blblue">Dashboard</a></li>
-            <li>
-                <a href="#" class="blyellow">UI Elements</a>
-                <div class="open"></div>
-                <ul>
-                    <li><a href="ui.html">UI Elements</a></li>
-                    <li><a href="widgets.html">Widgets</a></li>
-                    <li><a href="buttons.html">Buttons</a></li>
-                    <li><a href="icons.html">Icons</a></li>
-                    <li><a href="grid_sys.html">Grid System</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="blgreen">Forms Stuff</a>
-                <div class="open"></div>
-                <ul>
-                    <li><a href="forms.html">Form Elements</a></li>
-                    <li><a href="validation.html">Validation</a></li>
-                    <li><a href="grid.html">Grid</a></li>
-                    <li><a href="editor.html">Editors</a></li>
-                    <li><a href="wizard.html">Wizard</a></li>
-                </ul>
-            </li>
-            <li><a href="statistic.html" class="blred">Statistic</a></li>
-            <li class="active">
-                <a href="#" class="bldblue">Tables</a>
-                <div class="open"></div>
-                <ul>
-                    <li class="active"><a href="tables.html">Simple</a></li>
-                    <li><a href="tables_dynamic.html">Dynamic</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="blpurple">Samples</a>
-                <div class="open"></div>
-                <ul>
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="invoice.html">Invoice</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="blorange">Other</a>
-                <div class="open"></div>
-                <ul>
-                    <li><a href="files.html">File handling</a></li>
-                    <li><a href="images.html">Images</a></li>
-                    <li><a href="typography.html">Typography</a></li>
-                    <li><a href="404.html">Error 404</a></li>
-                </ul>
-            </li>
-        </ul>
-
-        <div class="widget">
-            <div class="datepicker"></div>
-        </div>
-
+        <%--left--%>
+        <jsp:include page="include_back/common_left.jsp"/>
+        <%--left--%>
     </div>
-     <%--<jsp:include page="include_back/common_left.jsp"/>--%>
+
     <div class="body">
 
         <ul class="navigation">
-            <li>
-                <a href="index-2.html" class="button">
-                    <div class="icon">
-                        <span class="ico-monitor"></span>
-                    </div>
-                    <div class="name">Dashboard</div>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="button yellow">
-                    <div class="arrow"></div>
-                    <div class="icon">
-                        <span class="ico-cog-2"></span>
-                    </div>
-                    <div class="name">UI Elements</div>
-                </a>
-                <ul class="sub">
-                    <li><a href="ui.html">UI Elements</a></li>
-                    <li><a href="widgets.html">Widgets</a></li>
-                    <li><a href="buttons.html">Buttons</a></li>
-                    <li><a href="icons.html">Icons</a></li>
-                    <li><a href="grid_system.html">Grid System</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="button green">
-                    <div class="arrow"></div>
-                    <div class="icon">
-                        <span class="ico-pen-2"></span>
-                    </div>
-                    <div class="name">Forms Stuff</div>
-                </a>
-                <ul class="sub">
-                    <li><a href="forms.html">Elements</a></li>
-                    <li><a href="validation.html">Validation</a></li>
-                    <li><a href="grid.html">Grid</a></li>
-                    <li><a href="editor.html">Editors</a></li>
-                    <li><a href="wizard.html">Wizard</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="statistic.html" class="button red">
-                    <div class="icon">
-                        <span class="ico-chart-4"></span>
-                    </div>
-                    <div class="name">Statistic</div>
-                </a>
-            </li>
-            <li>
-                <a href="#" class="button dblue">
-                    <div class="arrow"></div>
-                    <div class="icon">
-                        <span class="ico-layout-7"></span>
-                    </div>
-                    <div class="name">Tables</div>
-                </a>
-                <ul class="sub">
-                    <li><a href="tables.html">Simple</a></li>
-                    <li><a href="tables_dynamic.html">Dynamic</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="button purple">
-                    <div class="arrow"></div>
-                    <div class="icon">
-                        <span class="ico-box"></span>
-                    </div>
-                    <div class="name">Samples</div>
-                </a>
-                <ul class="sub">
-                    <li><a href="faq.html">FAQ</a></li>
-                    <li><a href="invoice.html">Invoice</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#" class="button orange">
-                    <div class="arrow"></div>
-                    <div class="icon">
-                        <span class="ico-cloud"></span>
-                    </div>
-                    <div class="name">Other</div>
-                </a>
-                <ul class="sub">
-                    <li><a href="files.html">File handling</a></li>
-                    <li><a href="images.html">Images</a></li>
-                    <li><a href="typography.html">Typography</a></li>
-                    <li><a href="404.html">Error 404</a></li>
-                </ul>
-            </li>
+
             <li>
                 <div class="user">
-                    <img src="../../img/examples/users/dmitry_m.jpg" align="left"/>
+                    <img src="../../img/examples/users/dmitry_m.png" align="left"/>
                     <a href="#" class="name">
-                        <span>Dmitry Ivaniuk</span>
-                        <span class="sm">Administrator</span>
+                        <span>小月</span>
+                        <span class="sm">Administrator&nbsp;</span>
                     </a>
                 </div>
+            </li>
+            <li>
+                <a  href="back_login" type="button" class="btn btn-default" style="background-color: #5eb95e">&nbsp;登录</a>
+            </li>
+            <li>
                 <div class="buttons">
-                    <div class="sbutton green navButton">
-                        <a href="#"><span class="ico-align-justify"></span></a>
-                    </div>
+                    <div class="sbutton green navButton" >
+                        <a href="#"><span class="ico-align-justify" ></span></a>
+                    </div
+                    >
                     <div class="sbutton blue">
-                        <a href="#"><span class="ico-cogs"></span></a>
-                        <div class="popup">
+                        <a href="#"><span class="ico-cogs" ></span></a>
+                        <div class="popup" style="width: 200px">
                             <div class="arrow"></div>
-                            <div class="row-fluid">
+                            <div class="row-fluid" >
                                 <div class="row-form">
-                                    <div class="span12"><strong>SETTINGS</strong></div>
-                                </div>
-                                <div class="row-form">
-                                    <div class="span4">Navigation:</div>
-                                    <div class="span8"><input type="radio" class="cNav" name="cNavButton" value="default"/> Default <input type="radio" class="cNav" name="cNavButton" value="bordered"/> Bordered</div>
-                                </div>
-                                <div class="row-form">
-                                    <div class="span4">Content:</div>
-                                    <div class="span8"><input type="radio" class="cCont" name="cContent" value=""/> Responsive <input type="radio" class="cCont" name="cContent" value="fixed"/> Fixed</div>
+                                    <div class="span4">账户管理:</div>
+                                    <div class="span8"><input type="button" class="cNav" name="cNavButton" value="账户设置"/><br><input type="button" class="cNav" name="cNavButton" value="退出"/></div>
                                 </div>
                             </div>
                         </div>
@@ -252,454 +98,53 @@
                 <div class="icon">
                     <span class="ico-layout-7"></span>
                 </div>
-                <h1>Tables <small>METRO STYLE ADMIN PANEL</small></h1>
+                <h1>栏目管理</h1>
             </div>
 
             <div class="row-fluid">
                 <div class="span12">
                     <div class="block">
-                        <div class="head blue">
-                            <div class="icon"><span class="ico-pen-2"></span></div>
-                            <h2>Default</h2>
+                        <div class="head dblue">
+                            <div class="icon"><span class="ico-layout-9"></span></div>
+                            <h2>查看栏目</h2>
                             <ul class="buttons">
-                                <li><a href="#" onClick="source('table_default'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
+                                <li><a href="#" onClick="source('table_sort_pagination'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
                             </ul>
                         </div>
                         <div class="data-fluid">
-                            <table cellpadding="0" cellspacing="0" width="100%" class="table">
-                                <thead>
-                                <tr>
-                                    <th width="25%">
-                                        Email
-                                    </th>
-                                    <th width="25%">
-                                        Name
-                                    </th>
-                                    <th width="25%">
-                                        Code
-                                    </th>
-                                    <th width="25%">
-                                        Post
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <a href="#">dmitry@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Dmitry Ivaniuk
-                                    </td>
-                                    <td>
-                                        DT-SV35582
-                                    </td>
-                                    <td>
-                                        <span class="label label-success">Developer</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">olga@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Olga Ivaniuk
-                                    </td>
-                                    <td width="25%">
-                                        DS-SV34522
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-warning">Economist</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">alex@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Alex Fruz
-                                    </td>
-                                    <td width="25%">
-                                        DV-SV41222
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-info">Developer</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">helen@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Helen Simonchuk
-                                    </td>
-                                    <td width="25%">
-                                        DV-ST32212
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-important">Promoter</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">valentin@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Valentin Ratushev
-                                    </td>
-                                    <td width="25%">
-                                        DV-WR21677
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-green">Lawyer</span>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="block">
-                        <div class="head purple">
-                            <div class="icon"><span class="ico-location"></span></div>
-                            <h2>With hover</h2>
-                            <ul class="buttons">
-                                <li><a href="#" onClick="source('table_hover'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
-                            </ul>
-                        </div>
-                        <div class="data-fluid">
-                            <table cellpadding="0" cellspacing="0" width="100%" class="table table-hover">
-                                <thead>
-                                <tr>
-                                    <th width="25%">
-                                        Email
-                                    </th>
-                                    <th width="25%">
-                                        Name
-                                    </th>
-                                    <th width="25%">
-                                        Code
-                                    </th>
-                                    <th width="25%">
-                                        Post
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <a href="#">dmitry@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Dmitry Ivaniuk
-                                    </td>
-                                    <td>
-                                        DT-SV35582
-                                    </td>
-                                    <td>
-                                        <span class="label label-success">Developer</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">olga@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Olga Ivaniuk
-                                    </td>
-                                    <td width="25%">
-                                        DS-SV34522
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-warning">Economist</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">alex@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Alex Fruz
-                                    </td>
-                                    <td width="25%">
-                                        DV-SV41222
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-info">Developer</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">helen@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Helen Simonchuk
-                                    </td>
-                                    <td width="25%">
-                                        DV-ST32212
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-important">Promoter</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#">valentin@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Valentin Ratushev
-                                    </td>
-                                    <td width="25%">
-                                        DV-WR21677
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label">Lawyer</span>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="block">
-                        <div class="head green">
-                            <div class="icon"><span class="ico-brush"></span></div>
-                            <h2>With checkbox and hover</h2>
-                            <ul class="buttons">
-                                <li><a href="#" onClick="source('table_hover_check'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
-                            </ul>
-                        </div>
-                        <div class="data-fluid">
-                            <table cellpadding="0" cellspacing="0" width="100%" class="table table-hover">
+                            <table class="table fpTable lcnp" cellpadding="0" cellspacing="0" width="100%">
                                 <thead>
                                 <tr>
                                     <th><input type="checkbox" class="checkall"/></th>
-                                    <th width="25%">
-                                        Email
-                                    </th>
-                                    <th width="25%">
-                                        Name
-                                    </th>
-                                    <th width="25%">
-                                        Code
-                                    </th>
-                                    <th width="25%">
-                                        Post
-                                    </th>
+                                    <th width="25%">栏目编号</th>
+                                    <th width="25%">栏目名字</th>
+                                    <th width="35%">栏目标题</th>
+                                    <th width="15%" class="TAC">操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">dmitry@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Dmitry Ivaniuk
-                                    </td>
-                                    <td>
-                                        DT-SV35582
-                                    </td>
-                                    <td>
-                                        <span class="label label-success">Developer</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">olga@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Olga Ivaniuk
-                                    </td>
-                                    <td width="25%">
-                                        DS-SV34522
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-warning">Economist</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">alex@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Alex Fruz
-                                    </td>
-                                    <td width="25%">
-                                        DV-SV41222
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-info">Developer</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">helen@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Helen Simonchuk
-                                    </td>
-                                    <td width="25%">
-                                        DV-ST32212
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-important">Promoter</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">valentin@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Valentin Ratushev
-                                    </td>
-                                    <td width="25%">
-                                        DV-WR21677
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label">Lawyer</span>
-                                    </td>
-                                </tr>
+                                <c:forEach var="contentList" items="${contentList}">
+                                    <tr>
+                                        <td><input type="checkbox" name="order[]" value="528"/></td>
+                                             <td>${contentList.id}</td>
+                                             <td>${contentList.channel.name}</td>
+                                              <td>${contentList.title}</td>
+                                        <td>
+                                            <a href="del_channelList?id=${contentList.id}" class="button red" onclick="return confirm('确定将栏目删除?')">
+                                                <div class="icon"><span class="ico-remove"></span></div>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
-                    <div class="block">
-                        <div class="head yellow">
-                            <div class="icon"><span class="ico-cloud-2"></span></div>
-                            <h2>Check checkbox on row click</h2>
-                            <ul class="buttons">
-                                <li><a href="#" onClick="source('table_hover_check_click'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
-                            </ul>
-                        </div>
-                        <div class="data-fluid">
-                            <table cellpadding="0" cellspacing="0" width="100%" class="table table-hover table-row-check">
-                                <thead>
-                                <tr>
-                                    <th><input type="checkbox" class="checkall"/></th>
-                                    <th width="25%">
-                                        Email
-                                    </th>
-                                    <th width="25%">
-                                        Name
-                                    </th>
-                                    <th width="25%">
-                                        Code
-                                    </th>
-                                    <th width="25%">
-                                        Post
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">dmitry@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Dmitry Ivaniuk
-                                    </td>
-                                    <td>
-                                        DT-SV35582
-                                    </td>
-                                    <td>
-                                        <span class="label label-success">Developer</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">olga@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Olga Ivaniuk
-                                    </td>
-                                    <td width="25%">
-                                        DS-SV34522
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-warning">Economist</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">alex@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Alex Fruz
-                                    </td>
-                                    <td width="25%">
-                                        DV-SV41222
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-info">Developer</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">helen@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Helen Simonchuk
-                                    </td>
-                                    <td width="25%">
-                                        DV-ST32212
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label label-important">Promoter</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <input type="checkbox" name="check[]" value="1"/>
-                                    </td>
-                                    <td>
-                                        <a href="#">valentin@domain.com</a>
-                                    </td>
-                                    <td>
-                                        Valentin Ratushev
-                                    </td>
-                                    <td width="25%">
-                                        DV-WR21677
-                                    </td>
-                                    <td width="25%">
-                                        <span class="label">Lawyer</span>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
 
                 </div>
             </div>
-
         </div>
 
     </div>
