@@ -1,5 +1,6 @@
 package com.zh.ljgc.service;
 
+import com.zh.ljgc.entity.Channel;
 import com.zh.ljgc.entity.Content;
 
 import java.util.List;
@@ -12,5 +13,5 @@ public interface BackChannelListService {
 
     void delList(Integer id);
 
-    void addList(Content content);
+    void addList(Content content, Channel channel);
 }

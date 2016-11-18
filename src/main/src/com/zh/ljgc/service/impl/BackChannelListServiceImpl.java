@@ -1,6 +1,7 @@
 package com.zh.ljgc.service.impl;
 
 import com.zh.ljgc.dao.BackChannelListDao;
+import com.zh.ljgc.entity.Channel;
 import com.zh.ljgc.entity.Content;
 import com.zh.ljgc.service.BackChannelListService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,7 +27,7 @@ public class BackChannelListServiceImpl implements BackChannelListService{
     }
 
     @Override
-    public void addList(Content content) {
-        backChannelListDao.addList(content);
+    public void addList(Content content, Channel channel) {
+        backChannelListDao.addList(content,channel);
     }
 }

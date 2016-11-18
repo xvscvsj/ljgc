@@ -18,6 +18,7 @@ public class LjgcDaoImpl implements BaseDao<Content> {
     @Autowired
     private SessionFactory sessionFactory ;
     @Override
+    //首页数据
     public List<Content> findAll() {
         Session session = sessionFactory.openSession();
        // session.beginTransaction();
@@ -26,6 +27,7 @@ public class LjgcDaoImpl implements BaseDao<Content> {
         //session.beginTransaction().commit();
         return contentList;
     }
+    //三级新闻数据
     public List<Content> query(){
         Session session=sessionFactory.openSession();
 

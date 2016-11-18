@@ -16,8 +16,7 @@ import java.util.List;
 public class LjgcController {
  @Autowired
     private LjgcService ljgcService;
-
-
+    //首页
     @RequestMapping("/index")
     public String index(Model model){
         List<Content> contentList=ljgcService.findAll();
@@ -26,7 +25,7 @@ public class LjgcController {
 //        }
         model.addAttribute("contentList",contentList);
         return "index";
-    }
+    }//三级新闻列表
     @RequestMapping("/Lj-NewList-Minute")
     public String ThreeNewList(Model model){
         List<Content> contents=ljgcService.query();
@@ -35,7 +34,7 @@ public class LjgcController {
 //        }
         model.addAttribute("contentList",contents);
         return "Lj-NewList-Minute";
-    }
+    }//新闻列表
     @RequestMapping("/newlist")
     public String findnew(Model model){
         List<Content> newlists =ljgcService.findnew();
@@ -59,7 +58,7 @@ public class LjgcController {
         model.addAttribute("contentList",cityList);
         model.addAttribute("City",cityList);
         return "Lj-Impression";
-    }
+    }//恋在丽江
     @RequestMapping("/love")
     public String findlove(Model model){
         List<Content> loveList =ljgcService.findlove();
@@ -67,6 +66,7 @@ public class LjgcController {
         model.addAttribute("Love",loveList);
         return "Lj-love";
     }
+    //视频
     @RequestMapping("/video")
     public String findvideo(Model model){
         List<Content> videoList =ljgcService.findvideo();
