@@ -15,7 +15,7 @@ import java.util.Set;
  */
 //@RunWith(SpringJUnit4ClassRunner.class)
 //@ContextConfiguration("/spring.xml")
-//public class BackChannelListDaoTest {
+public class BackChannelListDaoTest {
 //    @Autowired
 //    private BackChannelListDao backChannelListDao;
 //
@@ -24,4 +24,4 @@ import java.util.Set;
 //
 //    }
 //
-//}
+}
