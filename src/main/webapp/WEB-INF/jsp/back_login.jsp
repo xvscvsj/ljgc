@@ -54,7 +54,7 @@
         </div>        
         
         <div class="row-fluid">
-
+           <form action="back_index" method="post">
             <div class="row-form">
                 <div class="span12">
                     <input type="text" name="login" placeholder="用户名"/>
@@ -72,9 +72,10 @@
             </div>
             <div class="row-form">
                 <div class="span12">
-                    <a href="back_index" class="btn">登录 <span class="icon-arrow-next icon-white"></span></a>
+                    <button type="submit" class="btn">登录 <span class="icon-arrow-next icon-white"></span></button>
                 </div>                
             </div>
+           </form>
         </div>
     </div>
     
