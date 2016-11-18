@@ -54,6 +54,7 @@
         </div>        
         
         <div class="row-fluid">
+
             <div class="row-form">
                 <div class="span12">
                     <input type="text" name="login" placeholder="用户名"/>
