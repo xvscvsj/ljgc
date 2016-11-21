@@ -65,6 +65,9 @@ public class SecondController {
         }
         Pagination pagination=secondService.foodlist(pageNo,pageSize);
        model.addAttribute("pagination",pagination);
+        //封装head/left/footer中的数据
+        List<Content> contentList=ljgcService.findAll();
+        model.addAttribute("contentList",contentList);
         return "Lj-Bar";
     }
 

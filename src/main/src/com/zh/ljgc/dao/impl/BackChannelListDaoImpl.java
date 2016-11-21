@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Administrator on 2016/11/18 0018.
  */
 @Repository
- class BackChannelListDaoImpl implements BackChannelListDao{
+ public class BackChannelListDaoImpl implements BackChannelListDao{
   @Autowired
    private SessionFactory sessionFactory;
     @Override
@@ -46,8 +46,15 @@ import java.util.List;
     public void addList(Content content, Channel channel) {
        Session session=sessionFactory.openSession();
         session.beginTransaction();
-        session.save(content);
-        session.save(channel);
+        session.merge(content);
+//        session.save(channel);
+        session.getTransaction().commit();
+    }
+     //修改栏目
+    @Override
+    public void updateList(Integer id) {
+        Session session=sessionFactory.openSession();
+        session.beginTransaction();
         session.getTransaction().commit();
     }
 }

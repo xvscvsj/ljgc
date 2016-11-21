@@ -13,7 +13,7 @@ import java.util.List;
  * Created by Administrator on 2016/11/18 0018.
  */
 @Service
-public class BackChannelListServiceImpl implements BackChannelListService{
+ class BackChannelListServiceImpl implements BackChannelListService{
    @Autowired
    private BackChannelListDao backChannelListDao;
     @Override
@@ -26,8 +26,13 @@ public class BackChannelListServiceImpl implements BackChannelListService{
     {backChannelListDao.delList(id);
     }
 
-    @Override
-    public void addList(Content content, Channel channel) {
-        backChannelListDao.addList(content,channel);
-    }
+//    @Override
+//    public void addList(Content content, Channel channel) {
+//        backChannelListDao.addList(content,channel);
+//    }
+//
+//    @Override
+//    public void updateList(Integer id) {
+//        backChannelListDao.updateList(id);
+//    }
 }

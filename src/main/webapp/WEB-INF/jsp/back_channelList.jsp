@@ -41,6 +41,23 @@
     <script type='text/javascript' src='../../js/plugins.js'></script>
     <script type='text/javascript' src='../../js/charts.js'></script>
     <script type='text/javascript' src='../../js/actions.js'></script>
+    <%--<script type="text/javascript">--%>
+        <%--function show(id){--%>
+            <%--var x=event.clientX;--%>
+            <%--var y=event.clientY;--%>
+            <%--document.getElementById("pic").style.top=y+50;--%>
+            <%--document.getElementById("pic").style.left=x;--%>
+            <%--document.getElementById("pic").style.visibility="visible";--%>
+            <%--var formDiv="<div class='container'style='padding-left: 90px'> <div class='row clearfix'> <div class='col-md-6 column'><h2>修改栏目信息</h2><form action='back_channelList' method='post'> <div class='form-group'><label for='inputEmail3' class='col-sm-3 control-label'>栏目名：</label> <div class='col-sm-9'> <input type='text' class='form-control' id='inputEmail3' name='orderStstus' style='width: 20%'/> </div> <label for='inputEmail3' class='col-sm-3 control-label'>栏目标题：</label> <div class='col-sm-9'> <input type='text' class='form-control' id='inputEmail3' name='orderPhone' style='width: 20%' /><input type='hidden' id='oid' name='orderId' style='width: 20%'> </div> </div> <p> <div class='form-group'> <div class='col-sm-offset-2 col-sm-10' style='margin-left: 200px'> <input type='submit' class='btn btn-default' onclick='hide()' value='保存'> </input> &nbsp; <button type='button' class='btn btn-default' onclick='hide()'>取消</button></div></div></form>";--%>
+
+            <%--document.getElementById("pic").innerHTML=formDiv;--%>
+<%--//--%>
+            <%--document.getElementById('id').value = id;--%>
+        <%--}--%>
+        <%--function hide(){--%>
+            <%--document.getElementById("pic").style.visibility="hidden";--%>
+        <%--}--%>
+    <%--</script>--%>
 </head>
 <body>
 <div id="loader"><img src="../../img/loader.gif"/></div>
@@ -130,6 +147,11 @@
                                              <td>${contentList.channel.name}</td>
                                               <td>${contentList.title}</td>
                                         <td>
+                                            <%--&lt;%&ndash;//修改栏目&ndash;%&gt;--%>
+                                            <%--<a href="#" class="button green">--%>
+                                                <%--<div class="icon"><span class="ico-pencil"  onclick="show('${contentList.id}')"></span></div>--%>
+                                            <%--</a>--%>
+                                            <%--删除栏目--%>
                                             <a href="del_channelList?id=${contentList.id}" class="button red" onclick="return confirm('确定将栏目删除?')">
                                                 <div class="icon"><span class="ico-remove"></span></div>
                                             </a>
@@ -139,6 +161,8 @@
 
                                 </tbody>
                             </table>
+                            <%--<div id="pic" style="border:1px;position: absolute;width: 500px;height: 270px; background:burlywood;visibility: hidden"></div>--%>
+
                         </div>
                     </div>
 
