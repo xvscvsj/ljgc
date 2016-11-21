@@ -42,19 +42,19 @@ import java.util.List;
         session.getTransaction().commit();
     }
      //添加栏目
-    @Override
-    public void addList(Content content, Channel channel) {
-       Session session=sessionFactory.openSession();
-        session.beginTransaction();
-        session.merge(content);
-//        session.save(channel);
-        session.getTransaction().commit();
-    }
-     //修改栏目
-    @Override
-    public void updateList(Integer id) {
-        Session session=sessionFactory.openSession();
-        session.beginTransaction();
-        session.getTransaction().commit();
-    }
+//    @Override
+//    public void addList(Content content, Channel channel) {
+//       Session session=sessionFactory.openSession();
+//        session.beginTransaction();
+//        session.merge(content);
+////        session.save(channel);
+//        session.getTransaction().commit();
+//    }
+//     //修改栏目
+//    @Override
+//    public void updateList(Integer id) {
+//        Session session=sessionFactory.openSession();
+//        session.beginTransaction();
+//        session.getTransaction().commit();
+//    }
 }
