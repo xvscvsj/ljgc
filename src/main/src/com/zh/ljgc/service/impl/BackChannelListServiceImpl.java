@@ -26,11 +26,11 @@ import java.util.List;
     {backChannelListDao.delList(id);
     }
 
-//    @Override
-//    public void addList(Content content, Channel channel) {
-//        backChannelListDao.addList(content,channel);
-//    }
-//
+    @Override
+    public void addList(Content content, Channel channel) {
+        backChannelListDao.addList(content,channel);
+    }
+
 //    @Override
 //    public void updateList(Integer id) {
 //        backChannelListDao.updateList(id);

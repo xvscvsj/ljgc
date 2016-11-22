@@ -13,7 +13,7 @@ public interface BackChannelListDao {
 
     void delList(Integer id);
 
-//    void addList(Content content, Channel channel);
-//
+    void addList(Content content, Channel channel);
+
 //    void updateList(Integer id);
 }

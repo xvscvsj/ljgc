@@ -112,7 +112,7 @@
                             </ul>
                         </div>
                         <div class="data-fluid">
-                          <form action="back-addChannelList" method="post">
+                          <form action="back_addChannelList" method="post">
                             <div class="row-form">
                                 <div class="span3">栏目编号</div>
                                 <div class="span9"><input type="text" placeholder="id" name="id"></div>
@@ -126,7 +126,9 @@
                                 <div class="span9"><input type="text"  placeholder="title" name="title"></div>
                             </div>
                               <div class="row-form">
-                                <button class="btn btn-success" type="submit">提交</button>
+                                  <div class="span3">
+                                  <button class="btn btn-success" type="submit">提交</button>
+                              </div>
                               </div>
                           </form>
                         </div>

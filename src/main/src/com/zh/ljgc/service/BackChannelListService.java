@@ -13,8 +13,8 @@ public interface BackChannelListService {
     List<Content> findList();
     //删除栏目
     void delList(Integer id);
-
-//    void addList(Content content, Channel channel);
-
+     //添加栏目
+    void addList(Content content, Channel channel);
+    //修改栏目
 //    void updateList(Integer id);
 }

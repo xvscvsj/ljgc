@@ -33,28 +33,31 @@ import java.util.List;
     public void delList(Integer id) {
         Session session=sessionFactory.openSession();
         session.beginTransaction();
+        Channel channel=new Channel();
+        channel.setId(id);
         Content content=new Content();
         content.setId(id);
-//        Channel channel=new Channel();
-//        content.setChannel(channel);
-//        session.delete(channel);
+        content.setChannel(channel);
         session.delete(content);
         session.getTransaction().commit();
     }
      //添加栏目
-//    @Override
-//    public void addList(Content content, Channel channel) {
-//       Session session=sessionFactory.openSession();
-//        session.beginTransaction();
-//        session.merge(content);
-////        session.save(channel);
-//        session.getTransaction().commit();
-//    }
-//     //修改栏目
+    @Override
+    public void addList(Content content, Channel channel) {
+       Session session=sessionFactory.openSession();
+        session.beginTransaction();
+        session.merge(channel);
+        session.merge(content);
+        session.getTransaction().commit();
+    }
+     //修改栏目
 //    @Override
 //    public void updateList(Integer id) {
 //        Session session=sessionFactory.openSession();
 //        session.beginTransaction();
+//        Content content=new Content();
+//        content.setId(id);
+//        session.update(content);
 //        session.getTransaction().commit();
 //    }
 }

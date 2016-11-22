@@ -33,20 +33,15 @@ public class BackChannelListController {
         model.addAttribute("contentList",contentList);
         return "back_channelList";
     }
-//    @RequestMapping("/back_addChannelList")
-//       public String addChannelList(Content content, Channel channel){
-//        backChannelListService.addList(content,channel);
-////        List<Channel> channels=new ArrayList<Channel>();
-////        String names=channel.getName();
-////        List<Content> contents=new ArrayList<Content>();
-////        String titles=content.getTitle();
-////        Integer ids=content.getId();
-//
-//        return "back_addChannelList";
-//    }
-//    //修改数据
+    //添加栏目
+    @RequestMapping("/back_addChannelList")
+       public String addChannelList(Content content, Channel channel){
+        backChannelListService.addList(content,channel);
+        return "back_addChannelList";
+    }
+    //修改数据
 //    @RequestMapping("/back_updateList")
-//    public String updateList(Integer id,Model model){
+//       public String updateList(Integer id,Model model){
 //        List<Content> contentList=backChannelListService.findList();
 //        backChannelListService.updateList(id);
 //        model.addAttribute("contentList",contentList);
